@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #E8E3FF 0%, #D4C5FF 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    min-height: 80vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.placeholder {
+    width: 40px;
+}
+
+/* Date Navigation */
+.date-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.nav-btn {
+    background: rgba(147, 51, 234, 0.1);
+    border: none;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #7C3AED;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(147, 51, 234, 0.2);
+}
+
+.current-date {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Calendar Week View */
+.calendar-week {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 32px;
+}
+
+.day-item {
+    flex: 1;
+    text-align: center;
+    padding: 12px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.day-item.active {
+    background: rgba(218, 165, 32, 0.3);
+    border: 1px solid rgba(218, 165, 32, 0.5);
+}
+
+.day-item:hover {
+    background: rgba(218, 165, 32, 0.15);
+}
+
+.day-name {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.day-number {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Form Styling */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(218, 165, 32, 0.1);
+    font-size: 16px;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    background: rgba(218, 165, 32, 0.15);
+    box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.3);
+}
+
+.form-input::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(218, 165, 32, 0.1);
+    font-size: 16px;
+    color: #333;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    transition: all 0.2s ease;
+}
+
+.form-textarea:focus {
+    outline: none;
+    background: rgba(218, 165, 32, 0.15);
+    box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.3);
+}
+
+.form-textarea::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+/* Priority Options */
+.priority-options {
+    display: flex;
+    gap: 16px;
+}
+
+.priority-option {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+}
+
+.priority-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.priority-text {
+    display: block;
+    padding: 12px 16px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.priority-option.high .priority-text {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3B82F6;
+}
+
+.priority-option.medium .priority-text {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+}
+
+.priority-option.low .priority-text {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+}
+
+.priority-option input[type="radio"]:checked + .priority-text {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.priority-option.high input[type="radio"]:checked + .priority-text {
+    background: #3B82F6;
+    color: white;
+    border-color: #3B82F6;
+}
+
+.priority-option.medium input[type="radio"]:checked + .priority-text {
+    background: #8B5CF6;
+    color: white;
+    border-color: #8B5CF6;
+}
+
+.priority-option.low input[type="radio"]:checked + .priority-text {
+    background: #10B981;
+    color: white;
+    border-color: #10B981;
+}
+
+/* Alert Toggle */
+.alert-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.alert-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.alert-text {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #333;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 16px;
+}
+
+.submit-btn:hover {
+    background: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .app-container {
+        padding: 20px;
+    }
+    
+    .calendar-week {
+        gap: 2px;
+    }
+    
+    .day-item {
+        padding: 10px 6px;
+    }
+    
+    .priority-options {
+        gap: 8px;
+    }
+    
+    .priority-text {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}

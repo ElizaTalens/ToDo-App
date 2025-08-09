@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="app-container">
+            <!-- Header -->
+            <div class="header">
+                <div class="profile">
+                    <div class="avatar"></div>
+                    <div class="user-info">
+                        <h2>Eliza</h2>
+                        <p>Student</p>
+                    </div>
+                </div>
+                <div class="date-time">
+                    <div class="date"></div>
+                    <div class="time"></div>
+                </div>
+            </div>
+
+            <!-- Calendar -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="nav-btn" id="prevMonth">‹</button>
+                    <div class="month-year">
+                        <span id="currentMonth">July</span>
+                        <span id="currentYear">2025</span>
+                    </div>
+                    <button class="nav-btn" id="nextMonth">›</button>
+                </div>
+                <div class="calendar-week-view" id="weekView">
+                    <!-- Week view will be populated by JavaScript -->
+                </div>
+                <div class="calendar-full" id="fullCalendar" style="display: none;">
+                    <div class="weekdays">
+                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                    </div>
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Calendar grid will be populated by JavaScript -->
+                    </div>
+                </div>
+                <button class="toggle-view" id="toggleView">View Full Calendar</button>
+            </div>
+
+            <!-- Task Summary -->
+            <div class="task-summary">
+                <div class="task-card complete" onclick="openTaskComplete()">
+                    <div class="task-title">Task Complete</div>
+                    <div class="task-number">2</div>
+                    <div class="task-period">Today</div>
+                </div>
+                <div class="task-card pending" onclick="openTaskPending()">
+                    <div class="task-title">Task Pending</div>
+                    <div class="task-number">1</div>
+                    <div class="task-period">Today</div>
+                </div>
+            </div>
+
+            <!-- Task Today Section -->
+            <div class="section-header">
+                <h3>Task Today</h3>
+                <a href="#" class="view-all">View All</a>
+            </div>
+
+            <!-- Task List -->
+            <div class="task-list">
+                <div class="task-item completed">
+                    <div class="checkbox checked"></div>
+                    <div class="task-content">
+                        <span class="task-name"></span>
+                        <span class="priority high"></span>
+                    </div>
+                    <span class="fa-solid fa-trash"></span>
+
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn create-task" onclick="openCreateTask()">Create Task</button>
+                <button class="btn delete-all" id="deleteAllButton">Delete All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="homepage.js"></script>
+</body>
+</html>

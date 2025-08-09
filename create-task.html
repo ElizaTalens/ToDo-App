@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Task</title>
+    <link rel="stylesheet" href="create-task.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-container">
+            <!-- Header -->
+            <div class="header">
+                <button class="back-btn" onclick="goBack()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                </button>
+                <h1>Create new task</h1>
+                <div class="placeholder"></div>
+            </div>
+
+            <!-- Date Navigation -->
+            <div class="date-nav">
+                <button class="nav-btn" id="prevDate">‹</button>
+                <span class="current-date" id="currentDate">26 Mar</span>
+                <button class="nav-btn" id="nextDate">›</button>
+            </div>
+
+            <!-- Calendar Week View -->
+            <div class="calendar-week" id="calendarWeek">
+                <div class="day-item">
+                    <span class="day-name">WED</span>
+                    <span class="day-number">25</span>
+                </div>
+                <div class="day-item active">
+                    <span class="day-name">THU</span>
+                    <span class="day-number">26</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">FRI</span>
+                    <span class="day-number">27</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">SAT</span>
+                    <span class="day-number">28</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">SUN</span>
+                    <span class="day-number">29</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">MON</span>
+                    <span class="day-number">30</span>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <form id="taskForm" class="task-form">
+                <!-- Schedule Section -->
+                <div class="form-section">
+                    <h3>Schedule</h3>
+                    
+                    <div class="input-group">
+                        <input type="text" id="taskName" placeholder="Name" class="form-input" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <textarea id="taskDescription" placeholder="Description" class="form-textarea" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <!-- Priority Section -->
+                <div class="form-section">
+                    <h3>Priority</h3>
+                    <div class="priority-options">
+                        <label class="priority-option high">
+                            <input type="radio" name="priority" value="high">
+                            <span class="priority-text">High</span>
+                        </label>
+                        <label class="priority-option medium">
+                            <input type="radio" name="priority" value="medium" checked>
+                            <span class="priority-text">Medium</span>
+                        </label>
+                        <label class="priority-option low">
+                            <input type="radio" name="priority" value="low">
+                            <span class="priority-text">Low</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Alert Toggle -->
+                <div class="alert-section">
+                    <div class="alert-toggle">
+                        <span class="alert-text">Get alert for this task</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="alertToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="create-task.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = 'homepage.html';
+        }
+    </script>
+</body>
+</html>

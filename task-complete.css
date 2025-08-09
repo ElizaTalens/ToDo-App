@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #E8E3FF 0%, #D4C5FF 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.app-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    min-height: 80vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.placeholder {
+    width: 40px;
+}
+
+/* Date Navigation */
+.date-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.nav-btn {
+    background: rgba(147, 51, 234, 0.1);
+    border: none;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #7C3AED;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(147, 51, 234, 0.2);
+}
+
+.current-date {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Calendar Week View */
+.calendar-week {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    margin-bottom: 32px;
+}
+
+.day-item {
+    flex: 1;
+    text-align: center;
+    padding: 12px 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.day-item.active {
+    background: rgba(147, 51, 234, 0.15);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+}
+
+.day-item:hover {
+    background: rgba(147, 51, 234, 0.08);
+}
+
+.day-name {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.day-number {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+    margin: 0 -16px;
+    padding: 20px 16px;
+    border-radius: 12px;
+}
+
+.task-item.completed .task-name {
+    text-decoration: line-through;
+    color: #9CA3AF;
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #D1D5DB;
+    border-radius: 6px;
+    margin-right: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox.checked {
+    background: #10B981;
+    border-color: #10B981;
+}
+
+.checkbox:hover {
+    border-color: #10B981;
+    transform: scale(1.05);
+}
+
+.task-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.task-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.priority {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.priority.high {
+    color: #3B82F6;
+}
+
+.priority.medium {
+    color: #8B5CF6;
+}
+
+.priority.low {
+    color: #10B981;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .app-container {
+        padding: 20px;
+    }
+    
+    .calendar-week {
+        gap: 2px;
+    }
+    
+    .day-item {
+        padding: 10px 6px;
+    }
+    
+    .day-number {
+        font-size: 14px;
+    }
+    
+    .task-name {
+        font-size: 15px;
+    }
+}

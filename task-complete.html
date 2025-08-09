@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Complete</title>
+    <link rel="stylesheet" href="task-complete.css">
+</head>
+<body>
+    <div class="container">
+        <div class="app-container">
+            <!-- Header -->
+            <div class="header">
+                <button class="back-btn" onclick="goBack()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                </button>
+                <h1>Task Complete</h1>
+                <div class="placeholder"></div>
+            </div>
+
+            <!-- Date Navigation -->
+            <div class="date-nav">
+                <button class="nav-btn" id="prevDate">‹</button>
+                <span class="current-date" id="currentDate">26 Mar</span>
+                <button class="nav-btn" id="nextDate">›</button>
+            </div>
+
+            <!-- Calendar Week View -->
+            <div class="calendar-week">
+                <div class="day-item">
+                    <span class="day-name">WED</span>
+                    <span class="day-number">25</span>
+                </div>
+                <div class="day-item active">
+                    <span class="day-name">THU</span>
+                    <span class="day-number">26</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">FRI</span>
+                    <span class="day-number">27</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">SAT</span>
+                    <span class="day-number">28</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">SUN</span>
+                    <span class="day-number">29</span>
+                </div>
+                <div class="day-item">
+                    <span class="day-name">MON</span>
+                    <span class="day-number">30</span>
+                </div>
+            </div>
+
+            <!-- Completed Tasks List -->
+            <div class="task-list">
+                <div class="task-item completed">
+                    <div class="checkbox checked">
+                        <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="task-content">
+                        <span class="task-name">Drink 8 glasses of water</span>
+                        <span class="priority high">HIGH</span>
+                    </div>
+                </div>
+
+                <div class="task-item completed">
+                    <div class="checkbox checked">
+                        <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="task-content">
+                        <span class="task-name">Eat salad</span>
+                        <span class="priority medium">MEDIUM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="task-complete.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = 'homepage.html';
+        }
+    </script>
+</body>
+</html>
